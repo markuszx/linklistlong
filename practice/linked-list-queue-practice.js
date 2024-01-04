@@ -171,10 +171,20 @@ class SinglyLinkedList {
 
     reverseInPlace() {
         // Reverses the linked list in-place
-
+        let curr = this.head;
+        let prev = null;
+        let next = null;
         // Your code here
+        while(curr !== null){
+           next = curr.next;
+           curr.next = prev;
+           prev = curr;
+           curr = next;
+        }
 
         // Write your hypothesis on the time complexity of this method here
+        this.head = prev;
+        return this;
     }
 
 }
@@ -229,8 +239,11 @@ class DoublyLinkedList {
 
     reverseInPlace() {
         // Reverses the linked list in-place
-
+        let current = this.head;
         // Your code here
+        while(current){
+            
+        }
 
         // Write your hypothesis on the time complexity of this method here
     }
