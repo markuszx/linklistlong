@@ -167,7 +167,7 @@ class SinglyLinkedList {
 
     reverseInPlace() {
         // Reverses the linked list in-place
-<<<<<<< HEAD
+
         if (!this.head) return this
 
         let cur = this.head
@@ -195,23 +195,23 @@ class SinglyLinkedList {
         // i want to take the last node and put it as first
         // and i want to take out from the back once it has been added
 
-=======
-        let curr = this.head;
-        let prev = null;
-        let next = null;
-        // Your code here
-        while(curr !== null){
-           next = curr.next;
-           curr.next = prev;
-           prev = curr;
-           curr = next;
-        }
+// =======
+//         let curr = this.head;
+//         let prev = null;
+//         let next = null;
+//         // Your code here
+//         while(curr !== null){
+//            next = curr.next;
+//            curr.next = prev;
+//            prev = curr;
+//            curr = next;
+//         }
 
-        // Write your hypothesis on the time complexity of this method here
-        this.head = prev;
-        return this;
->>>>>>> 8c946357e7eb4f3b30144ac92f3a89dd72dd0bde
-    }
+//         // Write your hypothesis on the time complexity of this method here
+//         this.head = prev;
+//         return this;
+// >>>>>>> 8c946357e7eb4f3b30144ac92f3a89dd72dd0bde
+    
 
 }
 
@@ -305,9 +305,7 @@ class DoublyLinkedList {
 
     reverseInPlace() {
         // Reverses the linked list in-place
-        let current = this.head;
         // Your code here
-<<<<<<< HEAD
  if (!this.head) return this
 
         let cur = this.head
@@ -330,11 +328,7 @@ class DoublyLinkedList {
         //this.head = this.head.next
         this.head = prev
         return this
-=======
-        while(current){
-            
-        }
->>>>>>> 8c946357e7eb4f3b30144ac92f3a89dd72dd0bde
+
 
         // Write your hypothesis on the time complexity of this method here
     }
