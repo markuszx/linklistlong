@@ -34,20 +34,16 @@ class SinglyLinkedList {
 
 
     addToHead(val) {
-        let newNode = new SinglyLinkedNode(val)
-        //if the curr head doesnt have val then itr === the new node
+        let newnode = new SinglyLinkedNode(val);
         if(!this.head){
-          this.head = newNode;
-          return this.head
-
+           this.head = newnode;
+           return this.head;
         }
-        //seting var to the head
-        let cur = this.head;
-        // the new node next  = the old head
-        newNode.next = cur;
 
-        this.head = newNode
-        return this.head
+      newnode.next = this.head;
+      this.head = newnode
+
+
     }
 
 
@@ -171,10 +167,33 @@ class SinglyLinkedList {
 
     reverseInPlace() {
         // Reverses the linked list in-place
+        if (!this.head) return this
 
+        let cur = this.head
+        let next = cur
+        let prev = null
         // Your code here
+        //while this .head has a valid value
+         //
+        while (next) {
+            //this.head = this.head.next
+            next = cur.next
+            //this .head .next = null
+            cur.next = prev
+            //null  = this.head
+            prev = cur
+            // this.head = this.head.next
+            cur = next
+
+        }
+        //this.head = this.head.next
+        this.head = prev
+        return this
 
         // Write your hypothesis on the time complexity of this method here
+        // i want to take the last node and put it as first
+        // and i want to take out from the back once it has been added
+
     }
 
 }
@@ -191,6 +210,7 @@ class DoublyLinkedList {
     constructor(head = null) {
         this.head = head;
         this.tail = head;
+        this.length = 0;
     }
 
     addToTail(val) {
@@ -199,15 +219,36 @@ class DoublyLinkedList {
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
+            this.length ++
             return this.head;
         }
 
         this.tail.next = newNode;
         newNode.prev = this.tail;
         this.tail = newNode;
-
+        this.length++
         return this.head;
     }
+
+
+    addTohead(val){
+
+
+     let newnode = new DoublyLinkedNode(val);
+     if(!this.head){
+        this.head = newnode;
+        this.length++
+        return this.head;
+     }
+
+   newnode.next = this.head;
+   this.head = newnode
+
+  this.length++
+
+
+   }
+
 
     findMid() {
         // Returns the middle node
@@ -216,13 +257,31 @@ class DoublyLinkedList {
 
         // Your code here
 
+        let index = 0;
+        let curr = this.head;
+        while (curr) {
+            if (index === Math.floor((this.length - 1) / 2)) return curr;
+            index++
+            curr = curr.next;
+
+
+        }
+
+
         // Write your hypothesis on the time complexity of this method here
     }
 
     reverse() {
         // Returns a new reversed version of the linked list
-
+         let newLinkList = new DoublyLinkedList()
         // Your code here
+        while(this.head){
+             newLinkList.addTohead(this.head.value)
+
+             this.head = this.head.next
+
+        }
+        return newLinkList
 
         // Write your hypothesis on the time complexity of this method here
     }
@@ -231,6 +290,28 @@ class DoublyLinkedList {
         // Reverses the linked list in-place
 
         // Your code here
+ if (!this.head) return this
+
+        let cur = this.head
+        let next = cur
+        let prev = null
+        // Your code here
+        //while this .head has a valid value
+         //
+        while (next) {
+            //this.head = this.head.next
+            next = cur.next
+            //this .head .next = null
+            cur.next = prev
+            //null  = this.head
+            prev = cur
+            // this.head = this.head.next
+            cur = next
+
+        }
+        //this.head = this.head.next
+        this.head = prev
+        return this
 
         // Write your hypothesis on the time complexity of this method here
     }
