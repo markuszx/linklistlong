@@ -36,9 +36,9 @@ class DoublyLinkedList {
 
     addToTail(val) {
         // Add node of val to tail of linked list
-
+         //if(this.)
         // Your code here 
-
+     
         // Write your hypothesis on the time complexity of this method here
     }
 
@@ -52,9 +52,20 @@ class DoublyLinkedList {
 
     removeFromTail() {
         // Remove node at tail
-
+        if(this.length > 0){
+            if(this.length === 1){
+                this.head = null;
+                this.tail = null;
+             }
+             else{
+                previous = this.tail;
+                this.tail = null;
+                this.length--;
+             }
+        }
+       
         // Your code here 
-
+        this.length--;
         // Write your hypothesis on the time complexity of this method here
     }
 
