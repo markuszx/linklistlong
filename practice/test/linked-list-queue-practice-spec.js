@@ -165,6 +165,7 @@ describe('Part 3: Doubly Linked Lists', () => {
   it('`reverseInPlace` reverses the linked list in-place', () => {
 
     dll.addToTail(1);
+    
     dll.addToTail(2);
     dll.addToTail(3);
     dll.addToTail(4);
